@@ -1,0 +1,47 @@
+.add-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+form {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background: rgb(41, 55, 69);
+    padding: 20px 30px;
+    border-radius: 8px;
+    color: #fff;
+}
+
+
+
+form .input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+form h2 {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 300;
+    color: rgb(29, 198, 255);
+    text-decoration: underline;
+}
+
+.input input,
+select {
+    padding: 8px;
+    border-radius: 4px;
+    outline: 0;
+    border: 0;
+}
+
+
+form .book-btn {
+    margin-top: 10px;
+    margin-left: 80px;
+}

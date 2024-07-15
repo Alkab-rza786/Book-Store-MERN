@@ -6,8 +6,8 @@ function Navbar() {
     return (
         <div className='navbar'>
             <ul >
-                <h2>BOOK APP</h2>
-                <Link to='/' >All Books</Link>
+                <Link to='/' > <h2>BOOK APP</h2></Link>
+                <Link  >All Books</Link>
                 <Link to='/auth/create-book' >Add Book</Link>
                 <Link>Search Book</Link>
                 <Link>My Book</Link>
