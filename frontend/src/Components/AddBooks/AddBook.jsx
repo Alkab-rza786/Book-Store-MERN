@@ -1,41 +1,69 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AddBook.css'
+import axios from 'axios'
 
 function AddBook() {
+
+    const [book, setBook] = useState({
+        name: "",
+        authorName: "",
+        description: "",
+        price: "",
+        categories: "",
+    })
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setBook({ ...book, [name]: value })
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent the default form submission behavior
+        axios.post('http://localhost:4001/auth/add', book).then(result => {
+            console.log(result.data)
+            alert("Data sent successfully")
+        }).catch(err => console.log(err))
+    }
+
     return (
         <div className='add-book' >
-            <form action="">
+            <form onSubmit={handleSubmit} >
                 <h2>Add Book</h2>
                 <div className="input">
-                    <label htmlFor="name">Enter Book name</label>
-                    <input type="text" name='name' id='name' placeholder='name' />
+                    <label htmlFor="bookName">Enter Book name</label>
+                    <input type="text" name='name' id='bookName' placeholder='name'
+                        onChange={handleChange}
+                    />
                 </div>
                 <div className="input">
-                    <label htmlFor="name">Enter Author name</label>
-                    <input type="text" name='authorName' id='name' placeholder='Author name' />
+                    <label htmlFor="authorName">Enter Author name</label>
+                    <input type="text" name='authorName' id='authorName' placeholder='Author name'
+                        onChange={handleChange} />
                 </div>
                 <div className="input">
-                    <label htmlFor="name">Enter Description</label>
-                    <input type="text" name='description' id='name'
-                        placeholder='Description' />
+                    <label htmlFor="description">Enter Description</label>
+                    <input type="text" name='description' id='description'
+                        placeholder='Description'
+                        onChange={handleChange} />
                 </div>
                 <div className="input">
-                    <label htmlFor="name">Enter price</label>
-                    <input type="text" name='description' id='name'
-                        placeholder='price' />
+                    <label htmlFor="price">Enter price</label>
+                    <input type="text" name='price' id='price'
+                        placeholder='price'
+                        onChange={handleChange} />
                 </div>
                 <div className="input">
-                    <label htmlFor="name">Enter Categories</label>
-                    <select name="categories" id="">
-                        <option value="">Mathmatices</option>
-                        <option value="">English</option>
-                        <option value="">JAVA</option>
-                        <option value="">PYTHON</option>
-                        <option value="">DSA</option>
+                    <label htmlFor="categories">Enter Categories</label>
+                    <select name="categories" id="categories"
+                        onChange={handleChange} >
+                        <option value="Mathematics">Mathematics</option>
+                        <option value="English">English</option>
+                        <option value="JAVA">JAVA</option>
+                        <option value="PYTHON">PYTHON</option>
+                        <option value="DSA">DSA</option>
                     </select>
                 </div>
-                <div className="btn book-btn"><button>Add Book</button></div>
-
+                <div className="btn book-btn"><button type="submit">Add Book</button></div>
             </form>
         </div>
     )
