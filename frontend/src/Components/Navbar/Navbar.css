@@ -3,8 +3,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 50px;
-    background: rgb(41, 55, 69);
-    color: #fff;
+    background: #fff;
+    border-bottom: 2px solid rgb(29, 198, 255);
+    position: sticky;
+    top: 0;
 }
 
 .navbar ul {
@@ -21,7 +23,7 @@ ul h2 {
 
 ul a {
     text-decoration: none;
-    color: #fff;
+    color: black;
     font-size: 18px;
     font-weight: 500;
 }

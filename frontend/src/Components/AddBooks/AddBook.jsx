@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './AddBook.css'
 import axios from 'axios'
 
@@ -12,6 +12,8 @@ function AddBook() {
         categories: "",
     })
 
+
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setBook({ ...book, [name]: value })
@@ -24,6 +26,9 @@ function AddBook() {
             alert("Data sent successfully")
         }).catch(err => console.log(err))
     }
+
+
+
 
     return (
         <div className='add-book' >

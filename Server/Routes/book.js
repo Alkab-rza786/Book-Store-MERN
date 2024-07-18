@@ -15,4 +15,12 @@ router.post('/add', async (req, res) => {
 
 })
 
+router.get('/get', async (req, res) => {
+    await BookModel.find().
+        then(book => {
+            return res.status(200).json(book)
+        }).
+        catch(err => console.log(err))
+})
+
 module.exports = router

@@ -7,9 +7,9 @@ function Navbar() {
         <div className='navbar'>
             <ul >
                 <Link to='/' > <h2>BOOK APP</h2></Link>
-                <Link  >All Books</Link>
+                <Link to='/auth/all-book' >All Books</Link>
                 <Link to='/auth/create-book' >Add Book</Link>
-                <Link>Search Book</Link>
+                <Link to='/auth/search-book'>Search Book</Link>
                 <Link>My Book</Link>
             </ul>
             <div className="btn">
