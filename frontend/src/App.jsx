@@ -7,7 +7,7 @@ import SearchBook from './Components/SearchBook/SearchBook'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Navbar />
       <Routes>
         <Route path='/auth/create-book' element={<AddBook />} ></Route>

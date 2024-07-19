@@ -24,6 +24,14 @@ function AddBook() {
         axios.post('http://localhost:4001/auth/add', book).then(result => {
             console.log(result.data)
             alert("Data sent successfully")
+            setBook({
+                name: "",
+                authorName: "",
+                description: "",
+                price: "",
+                categories: "",
+            });
+            location.reload();
         }).catch(err => console.log(err))
     }
 

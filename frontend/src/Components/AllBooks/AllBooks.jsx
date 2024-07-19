@@ -20,6 +20,18 @@ function AllBooks() {
 
     }, [])
 
+    const handleDelete = (id) => {
+        try {
+            axios.delete('http://localhost:4001/auth/delete/' + id)
+                .then(res => {
+                    console.log(res)
+                    location.reload()
+                }).catch(err => console.log(err))
+        } catch (error) {
+
+        }
+    }
+
     return (
         <div className='all-book'>
             {
@@ -30,7 +42,11 @@ function AllBooks() {
                         <p>{books.description}</p>
                         <p>{books.price}</p>
                         <p>{books.categories}</p>
-                        <div className="btn"><button>save</button></div>
+                        <div className="btn-box">
+                            <div className="btn"><button>save</button></div>
+                            <div className="btn"><button onClick={() => handleDelete(books._id)} >Delete</button></div>
+                        </div>
+
                     </div>
                 ))
             }

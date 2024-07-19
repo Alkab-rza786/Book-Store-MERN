@@ -23,4 +23,10 @@ router.get('/get', async (req, res) => {
         catch(err => console.log(err))
 })
 
+router.delete('/delete/:id', (req, res) => {
+    const { id } = req.params;
+    BookModel.findByIdAndDelete({ _id: id })
+        .then(result => res.json(result)).catch(err => res.json(err))
+})
+
 module.exports = router

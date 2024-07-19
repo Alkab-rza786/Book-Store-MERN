@@ -5,8 +5,10 @@
     padding: 20px 50px;
     background: #fff;
     border-bottom: 2px solid rgb(29, 198, 255);
-    position: sticky;
+    width: 100%;
+    position: fixed;
     top: 0;
+    right: 0;
 }
 
 .navbar ul {
@@ -38,4 +40,11 @@ ul a {
     border-radius: 6px;
     font-size: 14px;
     font-weight: 500;
+}
+
+@media (max-width:450px) {
+    .navbar {
+        width: 100%;
+        background-color: red;
+    }
 }
