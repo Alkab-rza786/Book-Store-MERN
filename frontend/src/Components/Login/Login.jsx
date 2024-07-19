@@ -1,5 +1,4 @@
 import React from 'react'
-import './Login.css'
 
 function Login() {
     return (
@@ -7,6 +6,7 @@ function Login() {
 
             <form action="" className='form-login' >
                 <h1>Login</h1>
+
                 <div className="input ">
                     <input type="email" placeholder='email' name='email' />
                 </div>
@@ -16,8 +16,6 @@ function Login() {
                 <div className="btn login-btn">
                     <button>
                         Login</button>
-                    <button>
-                        Sign Up</button>
                 </div>
             </form>
         </div>
@@ -25,3 +23,8 @@ function Login() {
 }
 
 export default Login
+
+
+
+
+

@@ -9,6 +9,9 @@
 
 body {
   background: rgb(217, 210, 210);
+}
 
-
+a {
+  text-decoration: none;
+  color: white;
 }
