@@ -1,0 +1,24 @@
+.all-book {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    margin-top: 30px;
+    gap: 30px;
+    row-gap: 50px;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.all-book .books {
+    background: #fff;
+    padding: 10px 20px;
+    flex: 1;
+    max-width: 400px;
+
+}
+
+.btn-box {
+    margin-top: 20px;
+    display: flex;
+    gap: 24px;
+}
