@@ -13,7 +13,7 @@ function Navbar() {
                 <Link>My Book</Link>
             </ul>
             <div className="btn">
-                <button>Login/Signup</button>
+                <Link to='/auth/login'><button>Login/Signup</button></Link>
             </div>
         </div>
     )
