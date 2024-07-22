@@ -9,7 +9,7 @@ function AllBooks() {
     useEffect(() => {
 
         try {
-            axios.get('http://localhost:4001/auth/get/').
+            axios.get('http://localhost:4001/book/get/').
                 then(book => {
                     setBook(book.data)
                 }).catch(err => console.log(err))
@@ -22,7 +22,7 @@ function AllBooks() {
 
     const handleDelete = (id) => {
         try {
-            axios.delete('http://localhost:4001/auth/delete/' + id)
+            axios.delete('http://localhost:4001/book/delete/' + id)
                 .then(res => {
                     console.log(res)
                     location.reload()

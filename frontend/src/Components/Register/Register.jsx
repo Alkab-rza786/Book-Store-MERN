@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Register.css'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 function Register() {
@@ -8,12 +8,15 @@ function Register() {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        axios.post('http://localhost:4001/book/register', { username, email, password }).
+        e.preventDefault();
+        axios.post('http://localhost:4001/auth/register', { username, email, password }).
             then(result => {
+                navigate('/auth/register')
                 console.log(result)
-                alert("Regiter succesfully")
+
             }).catch(err => console.log(err))
     }
 
@@ -37,8 +40,6 @@ function Register() {
                 <div className="btn login-btn">
                     <button>
                         Sign up</button>
-                    <button><Link to='/auth/register'>
-                        login</Link></button>
                 </div>
             </form>
         </div>

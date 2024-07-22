@@ -13,7 +13,7 @@ function SearchBook() {
 
     useEffect(() => {
         try {
-            axios.get('http://localhost:4001/auth/get/').
+            axios.get('http://localhost:4001/book/get/').
                 then(book => {
                     setBook(book.data)
                 }).catch(err => console.log(err))

@@ -21,7 +21,7 @@ function AddBook() {
 
     const handleSubmit = (e) => {
         e.preventDefault(); // Prevent the default form submission behavior
-        axios.post('http://localhost:4001/auth/add', book).then(result => {
+        axios.post('http://localhost:4001/book/add', book).then(result => {
             console.log(result.data)
             alert("Data sent successfully")
             setBook({

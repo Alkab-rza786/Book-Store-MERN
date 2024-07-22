@@ -1,7 +1,8 @@
 const express = require("express")
 const cors = require("cors")
+const cookieParser = require('cookie-parser')
 const mongoose = require("mongoose")
-const router = require("./Routes/book")
+const bookRouter = require("./Routes/book")
 const authRouter = require('./Routes/auth')
 
 
@@ -14,9 +15,11 @@ app.use(cors({
 }))
 
 app.use(express.json());
+app.use(cookieParser());
 
-app.use('/auth', router)
-app.use('/book', authRouter)
+
+app.use('/auth', authRouter)
+app.use('/book', bookRouter)
 
 mongoose.connect("mongodb://localhost:27017/Book-Store");
 
